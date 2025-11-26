@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
      <div className="bg-black min-h-screen italic">
       <Navbar />
-      <div className="pt-30 lg:pt-32 xl:pt-34">
+      <div className="pt-30 lg:pt-32 xl:pt-34 italic">
         <Outlet />
       </div>
     </div>

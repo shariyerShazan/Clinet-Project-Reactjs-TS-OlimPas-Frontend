@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { HiMenu , HiX} from "react-icons/hi";
+
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -10,6 +11,7 @@ const navItems = [
 ];
 
 const Navbar = () => {
+const { pathname } = useLocation()
   const user = false
     const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +26,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div onClick={()=>navigate("/")} className="text-2xl md:text-3xl lg:text-[40px] font-abc-ultra-3 bold-stroke tracking-[1px] md:tracking-[2px] text-white font-bold cursor-pointer">
+          {
+           ( pathname  !== "/" ) ? <div onClick={()=>navigate("/")} className="text-2xl md:text-3xl lg:text-[40px] font-abc-ultra-3 bold-stroke tracking-[1px] md:tracking-[2px] text-white font-bold cursor-pointer">
             OLIM PASS
-          </div>
+          </div> : <div></div>
 
+          }
+          
           {/* Desktop Navigation */}
           {
             user &&  <div className="hidden md:flex items-center gap-8">

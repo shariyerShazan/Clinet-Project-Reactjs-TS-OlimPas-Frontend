@@ -20,10 +20,7 @@ const Categories = ({partnerCategories} : {partnerCategories : Category[]}) => {
                 </p>
               </div> */}
 
-              <div  
-                  className={`inline-block border !border-[${category.color}] border-2 rounded-full px-9.5 py-2 mb-6`}
-                  style={{ borderColor: category.color }}
-               >
+              <div className='pb-2' >
                 <p 
                   style={{ color: category.color }}
                   className={`text-[${category.color}]  italic  text-base md:text-lg lg:text-xl  xl:text-2xl`}
